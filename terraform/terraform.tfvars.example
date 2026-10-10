@@ -1,0 +1,23 @@
+# Copia este archivo a terraform.tfvars y completa con los valores de TU cuenta.
+# NUNCA subas terraform.tfvars al repo (ya está en .gitignore).
+
+# Hosted zone de Route 53 para tu dominio.
+# Obtenerlo con: aws route53 list-hosted-zones-by-name --dns-name <tu-dominio>
+hosted_zone_id = "<TU_HOSTED_ZONE_ID>"
+
+# Perfil de credenciales AWS a usar (aws configure list-profiles)
+aws_profile = "<TU_PERFIL_AWS>"
+
+# Dominio y subdominios públicos del demo (deben apuntar a tu hosted zone)
+domain_name  = "<TU_DOMINIO>"
+front_domain = "cafequetzal.<TU_DOMINIO>"
+api_domain   = "apicafequetzal.<TU_DOMINIO>"
+
+# Proyecto GCP (warm standby). Obtenerlo con: gcloud config get-value project
+gcp_project = "<TU_PROYECTO_GCP>"
+
+# URL del servicio Cloud Run (se conoce tras el primer deploy de GCP)
+cloud_run_url = "cafe-quetzal-<GCP_PROJECT_NUMBER>.us-central1.run.app"
+
+# Email para alertas SNS de failover (opcional)
+alert_email = ""
